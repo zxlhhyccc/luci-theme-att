@@ -184,7 +184,7 @@
 <html lang="<%=luci.i18n.context.lang%>">
 <head>
     <meta charset="utf-8">
-    <title>云智物联网关</title>
+    <title><%=striptags( (boardinfo.hostname or "?") .. ( (node and node.title) and ' - ' .. translate(node.title) or '')) %> - LuCI</title>
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
     <meta name="format-detection" content="telephone=no, email=no"/>
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -220,7 +220,7 @@
 <header>
 		<div class="container">
 			<span class="showSide"></span>
-			<a class="brand" href="#">云智物联网关</a>
+			<a class="brand" href="#"><%=boardinfo.hostname or "?"%></a>
 			<div class="pull-right">
 				<% render_changes() %>
 				<span id="xhr_poll_status" style="display:none" onclick="XHR.running() ? XHR.halt() : XHR.run()">
